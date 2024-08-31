@@ -12,9 +12,9 @@ def replace_batchnorm_with_groupnorm(model):
             replace_batchnorm_with_groupnorm(module) 
     return model
 
-def custom_DeepLabv3(in_channel):
+def custom_DeepLabv3(out_channel):
     model = deeplabv3_resnet50(weights="DEFAULT", progress=True)
-    model.classifier = DeepLabHead(in_channels=in_channel, num_classes=2048)
+    model.classifier = DeepLabHead(1024*1024, out_channel)
 
     model = replace_batchnorm_with_groupnorm(model)
 

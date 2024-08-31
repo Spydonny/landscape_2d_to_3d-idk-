@@ -5,7 +5,6 @@ from torch import nn
 from torch import optim
 from torch.utils.data import DataLoader
 from torch.utils.data import Dataset
-from torchvision import transforms
 import deep_lab_v3_resnet50 as dplb
 from torchvision.io import read_image
 
