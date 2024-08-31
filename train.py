@@ -34,6 +34,7 @@ class CustomDataset(Dataset):
 ############################################################
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+torch.cuda.empty_cache()
 
 model = dplb.custom_DeepLabv3(out_channel=1)
 model.to(device)
